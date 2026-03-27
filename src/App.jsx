@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import ScoreBoard from './components/ScoreBoard'
+import GameBoard from './components/GameBoard'
 import titleImg from './assets/title.png';
 import './styles/index.css'
 
 function App() {
-  const { highScore, setHighScore } = useState(0);
-  const { currentScore, setCurrentScore } = useState(0);
+  const [highScore, setHighScore] = useState(0);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [gameState, setGameState] = useState("start")
+
+  function startGame() {
+    setGameState("running");
+  }
 
   function scoring(success) {
     if (success) {
@@ -28,7 +34,7 @@ function App() {
       <div className="explanation"></div>
     </header>
     <main>
-      <GameBoard/>
+      <GameBoard gameState={gameState} onReady={startGame}/>
     </main>
     </>
   )
