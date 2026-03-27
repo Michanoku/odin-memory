@@ -8,6 +8,9 @@ Functional: Call to API for card set, shuffle cards, add points, reset game
 Suggestion: PokeApi https://pokeapi.co/api/v2/pokemon/{id} id => 1 - 151 for gen 1
 then: id, name, cries.latest, sprites.front_default
 
+Font: "Pokemon Solid" (fan-made, author unknown)
+Used for educational / non-commercial purposes
+
 const typeColors = {
   normal: "#A8A77A",
   fire: "#EE8130",
