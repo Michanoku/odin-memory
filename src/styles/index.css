@@ -1,8 +1,8 @@
 :root {
   --text: #f5f5f5;
-  --bg:  #2a2f3a;
+  --bg: #2a2f3a;
   font: 18px/145% var(--sans);
-  font-family: 'Bahnschrift';
+  font-family: "Bahnschrift";
   letter-spacing: 0.18px;
   color: var(--text);
   background: var(--bg);
