@@ -134,8 +134,10 @@ export default function GameBoard({ gameId, numberOfCards, onClick }) {
   function clickCard(cardId) {
     const success = clickedList.includes(cardId) ? false : true;
     if (success) {
-      setClickedList([...clickedList, cardId]);
+      setClickedList(prev => [...prev, cardId]);
       shuffleCards();
+    } else {
+      setClickedList([]);
     }
     onClick(success);
   }
