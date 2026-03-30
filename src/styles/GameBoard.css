@@ -1,0 +1,25 @@
+.gameBoard {
+  display: grid;
+  gap: 0.75rem;
+
+  grid-template-columns: repeat(2, 1fr); /* mobile default */
+}
+
+.card {
+    aspect-ratio: 8/9;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 480px) {
+  .gameBoard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .gameBoard {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
