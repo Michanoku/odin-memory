@@ -10,10 +10,10 @@ const numberOfCards = 12;
 function App() {
   const [highScore, setHighScore] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
-  const [gameState, setGameState] = useState("start")
+  const [gameId, setGameId] = useState(0);
 
-  function startGame() {
-    setGameState("running");
+  function resetGame() {
+    setGameId(prev => prev + 1);
   }
 
   function scoring(success) {
@@ -24,6 +24,7 @@ function App() {
         setHighScore(currentScore);
       }
       setCurrentScore(0);
+      resetGame();
     }
   }
 
@@ -37,7 +38,7 @@ function App() {
       <div className="explanation"></div>
     </header>
     <main>
-      <GameBoard gameState={gameState} numberOfCards={numberOfCards} onReady={startGame}/>
+      <GameBoard gameId={gameId} numberOfCards={numberOfCards} onClick={scoring}/>
     </main>
     </>
   )
