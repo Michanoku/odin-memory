@@ -29,27 +29,28 @@ body {
   background-color: var(--bg);
 }
 
-.title {
-  height: 100px;
-  max-height: 100px;
-}
-
 .title > img {
   max-height: 100px;
+  max-width: 100%;
   width: auto;
+  height: auto;
 }
 
 .upperBar {
   padding: 2rem 0rem;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .meta {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 3rem;
+  width: 100%;
+  gap: 1rem;
 }
 
 .responsive-padding {
@@ -61,6 +62,16 @@ body {
   .responsive-padding {
     padding-block: 1rem;
     padding-inline: clamp(1.25rem, 12.3vw, 10rem);
+  }
+
+  .meta {
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    gap: 3rem;
+  }
+  .upperBar {
+    justify-content: space-between;
   }
 }
 
